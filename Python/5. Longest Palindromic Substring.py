@@ -26,7 +26,7 @@ class Solution:
       i = 0
       while i < len(s): # for循环中i只能按照for的结构进行增减  while循环则可以在循环中操作i的任意增减
         r,l = i, i
-        while s[r] == s[r+1] and r+1 < len(s):  #先判断是哪种回文方式，减少运算时间
+        while s[r] == s[r+1] and r+1 < len(s):  #判断中心是否是相同的数字，如此便可以区分开回文方式 中间相等，中间不相等
           r = i + 1
         i = r+1
         len1 = self.getlongestpalindrome(s,l,r)
