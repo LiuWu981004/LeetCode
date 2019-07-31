@@ -23,10 +23,12 @@ class Solution:
 class Solution:
    def longestPalindrome(self,s):
       palindrome = ''
-      for i in range(len(s)):
+      i = 0
+      while i < len(s): # for循环中i只能按照for的结构进行增减  while循环则可以在循环中操作i的任意增减
         r,l = i, i
-        if s[r] == s[r+1] and r < len(s):
+        while s[r] == s[r+1] and r+1 < len(s):  #先判断是哪种回文方式，减少运算时间
           r = i + 1
+        i = r+1
         len1 = self.getlongestpalindrome(s,l,r)
         if len(len1) >len(palindrome):
           palindrome = len1
